@@ -73,8 +73,10 @@
     methods: {
    
       async submitForm() {
+        const api_url = import.meta.env.VITE_API_URL;
+
         try {
-          const response = await axios.post('http://localhost/api/newsletter', {
+          const response = await axios.post(api_url + 'newsletter', {
             name: this.formData.name,
             text: this.formData.text,
             type: this.formData.type,
